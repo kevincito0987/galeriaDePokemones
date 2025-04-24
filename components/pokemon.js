@@ -1,5 +1,5 @@
 async function fetchPokemons() {
-    const url = "https://pokeapi.co/api/v2/pokemon?limit=4"; // Solo traemos 4 Pokémon para las cards
+    const url = "https://pokeapi.co/api/v2/pokemon?limit=4"; // Traemos solo 4 Pokémon para modificar las cards existentes
   
     try {
       const response = await fetch(url);
@@ -14,7 +14,7 @@ async function fetchPokemons() {
           const speciesData = await speciesResponse.json();
   
           return {
-            number: String(index + 1).padStart(2, "0"), // Números con formato 01, 02...
+            number: String(index + 1).padStart(2, "0"), // Números con formato 01, 02, etc.
             name: details.name,
             image: details.sprites.front_default, // Imagen del Pokémon
             description: speciesData.flavor_text_entries.find(
@@ -25,35 +25,27 @@ async function fetchPokemons() {
         })
       );
   
-      renderPokemons(pokemonList);
+      updateCards(pokemonList);
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
     }
   }
   
-  // 🔹 Función para insertar los Pokémon en las cards
-  function renderPokemons(pokemons) {
-    const cardContainer = document.querySelector(".card-container");
+  // 🔹 Función para reemplazar la información en las cards existentes
+  function updateCards(pokemons) {
+    const cards = document.querySelectorAll(".card");
   
-    cardContainer.innerHTML = pokemons.map((pokemon) => `
-      <div class="card">
-        <div class="card-content">
-          <div class="number">
-            <p>${pokemon.number}</p> <!-- Número del Pokémon -->
-          </div>
-          <div class="description">
-            <div class="get">
-              <div class="slider"></div>
-              <p>Pokémon Data</p>
-            </div>
-            <h3 class="card-title">${pokemon.name}</h3> <!-- Nombre del Pokémon -->
-            <p class="card-text">${pokemon.description}</p> <!-- Descripción -->
-            <p class="habilidades">Abilities: ${pokemon.abilities.join(", ")}</p> <!-- Habilidades -->
-          </div>
-        </div>
-        <img src="${pokemon.image}" alt="${pokemon.name}" class="card-image"> <!-- Imagen -->
-      </div>
-    `).join(""); 
+    pokemons.forEach((pokemon, index) => {
+      if (cards[index]) { // Solo reemplaza si la card existe
+        cards[index].querySelector(".number p").textContent = pokemon.number; // Número
+        cards[index].querySelector(".card-title").textContent = pokemon.name; // Nombre
+        cards[index].querySelector(".card-text").textContent = pokemon.description; // Descripción
+        cards[index].querySelector(".habilidades").textContent = `Abilities: ${pokemon.abilities.join(", ")}`; // Habilidades
+        cards[index].querySelector(".card-image").src = pokemon.image; // Imagen
+        cards[index].querySelector(".card-image").alt = pokemon.name;
+      }
+    });
   }
   
   fetchPokemons();
+  
