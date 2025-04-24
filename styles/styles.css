@@ -98,6 +98,43 @@ main {
   padding: 0px 229px 100px;
   background: var(--color-3);
 }
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  gap: 20px;
+  padding: 90px;
+}
+
+.filters a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.filters a img {
+  width: 40px;
+  height: 40px;
+}
+
+.filters a p {
+  font-family: "Gilroy-ExtraBold";
+  font-size: 18px;
+  color: var(--color-2);
+}
+
+.filters a:hover {
+  background-color: var(--color-1);
+  color: var(--color-3);
+  border-radius: 20px;
+}
+
 .card-container {
   display: flex;
   flex-direction: column; 
