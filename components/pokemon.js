@@ -31,4 +31,29 @@ async function fetchPokemons() {
     }
   }
   
+  // 🔹 Función para insertar los Pokémon en las cards
+  function renderPokemons(pokemons) {
+    const cardContainer = document.querySelector(".card-container");
   
+    cardContainer.innerHTML = pokemons.map((pokemon) => `
+      <div class="card">
+        <div class="card-content">
+          <div class="number">
+            <p>${pokemon.number}</p> <!-- Número del Pokémon -->
+          </div>
+          <div class="description">
+            <div class="get">
+              <div class="slider"></div>
+              <p>Pokémon Data</p>
+            </div>
+            <h3 class="card-title">${pokemon.name}</h3> <!-- Nombre del Pokémon -->
+            <p class="card-text">${pokemon.description}</p> <!-- Descripción -->
+            <p class="habilidades">Abilities: ${pokemon.abilities.join(", ")}</p> <!-- Habilidades -->
+          </div>
+        </div>
+        <img src="${pokemon.image}" alt="${pokemon.name}" class="card-image"> <!-- Imagen -->
+      </div>
+    `).join(""); 
+  }
+  
+  fetchPokemons();
