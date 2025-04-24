@@ -30,10 +30,15 @@
                         <img src="./assets/icons/all.svg" alt="">
                         <p>All</p>
                     </a>
-                    <a href="#">
-                        <img src="./assets/icons/agregar.svg" alt="">
-                        <p>Nuevo pokemon</p>
-                    </a>
+                    <div id="pokemonSearch">
+                        <input type="text" id="searchInput" placeholder="Buscar Pokémon">
+                        <button id="searchBtn">Buscar</button>
+                        <select id="pokemonResults"></select>
+                        <a href="#" id="addPokemonBtn">
+                            <img src="./assets/icons/agregar.svg" alt="">
+                            <p>Nuevo Pokémon</p>
+                        </a>
+                    </div>
                 </div>
                 <div class="card-container" id="pokemons"></div>
                     <div class="card">

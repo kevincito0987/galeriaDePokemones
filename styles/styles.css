@@ -202,6 +202,7 @@ main::before {
   color: var(--color-2);
 }
 
+
 .description {
   display: flex;
   flex-direction: column;
