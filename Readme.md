@@ -12,4 +12,4 @@ Crea una galería de “Pokémon” donde el usuario pueda:
 
 - Uso de `insertAdjacentHTML()`, `.replaceChild()`, `.remove()`.
 - Manejo de eventos `click`, `mouseenter` y `mouseleave`.
-- Aplicar la API Web Animations (`.animate(keyframes, options)`).
+- Aplicar a la API Web Animations (`.animate(keyframes, options)`).
