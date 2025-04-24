@@ -1,6 +1,20 @@
 :root {
   --color-1: #FBD784;
   --color-2: #FFFFFF;
-  --color-3: #0B1D26;
-  
+  --color-3: #0B1D26;  
+}
+
+@font-face {
+    font-family: "Gilroy-ExtraBold";
+    src: url(../assets/fonts/gilroy/Gilroy-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "Chronicle_Display-SemiBold";
+    src: url(../assets/fonts/chronicle-display/Chronicle\ Display\ Semibold.otf);
+}
+
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url(../assets/fonts/gilroy/Gilroy-Bold.ttf);
 }
