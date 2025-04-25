@@ -100,5 +100,10 @@ function addNewCard(pokemon) {
         </div>
     `;
 
+    // 🔹 Evento para eliminar la card al hacer clic en el botón de eliminar
+    newCard.querySelector(".eliminar").addEventListener("click", function() {
+        newCard.remove(); // 🔹 Elimina la card seleccionada
+    });
+
     cardContainer.prepend(newCard); // Agrega la nueva card al inicio
 }
