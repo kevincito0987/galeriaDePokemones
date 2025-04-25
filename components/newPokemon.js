@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("addPokemonBtn").addEventListener("click", async function(event) {
         event.preventDefault();
         await addSelectedPokemon(); 
+
+        // 🔹 Mantener visible el input de búsqueda después de agregar un Pokémon
+        document.getElementById("pokemonSearch").style.display = "block";
     });
 });
 
@@ -43,6 +46,7 @@ function populateResultsDropdown(pokemonList) {
     });
 }
 
+// 🔹 Función para obtener detalles del Pokémon seleccionado y agregarlo como nueva card
 async function addSelectedPokemon() {
     const selectedUrl = document.getElementById("pokemonResults").value;
     if (!selectedUrl) return;
@@ -78,8 +82,8 @@ function addNewCard(pokemon) {
     newCard.classList.add("card");
     newCard.innerHTML = `
         <div class="card-image" style="background-image: url(${pokemon.image}); background-size: cover; background-position: center;">
+            <img src="./assets/icons/eliminar.svg" alt="Botón Eliminar" class="eliminar">
         </div>
-        <img src="./assets/icons/eliminar.svg" alt="Botón Eliminar" class="eliminar">
         <div class="card-content">
             <div class="number">
                 <p>${pokemon.number}</p>
