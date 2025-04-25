@@ -4,12 +4,16 @@
         <title>Galeria de Pokemones</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 🔹 Ícono de la página -->
         <link rel="shortcut icon" href="./assets/icons/pokeIcon.svg" type="image/x-icon">
+        <!-- 🔹 Estilos -->
         <link rel="stylesheet" href="./styles/styles.css">
+        <!-- 🔹 Scripts de componentes (modularizados y diferidos) -->
         <script type="module" src="./components/pokemon.js" defer></script>
         <script type="module" src="./components/newPokemon.js" defer></script>
     </head>
     <body>
+        <!-- 🏔️ Header con título y guía -->
         <header>
             <div class="headerContent">
                 <div class="guide">
@@ -23,8 +27,10 @@
                 </div>
             </div>
         </header>
+        <!-- 🏕️ Contenido principal -->
         <main>
             <div class="mainContent">
+                <!-- 🔎 Filtros y búsqueda -->
                 <div class="filters">
                     <a href="#pokemons">
                         <img src="./assets/icons/all.svg" alt="">
@@ -36,12 +42,14 @@
                             <button id="searchBtn">Buscar</button>
                         <select id="pokemonResults"></select>
                         </div>
+                        <!-- ➕ Botón para agregar nuevo Pokémon -->
                         <a href="#" id="addPokemonBtn">
                             <img src="./assets/icons/agregar.svg" alt="">
                             <p>Nuevo Pokémon</p>
                         </a>
                     </div>
                 </div>
+                <!-- 🎴 Contenedor de tarjetas Pokémon -->
                 <div class="card-container" id="pokemons"></div>
                     <div class="card">
                         <div class="card-content">
