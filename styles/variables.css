@@ -1,21 +1,23 @@
+/* 🎨 Paleta de colores */
 :root {
-  --color-1: #FBD784;
-  --color-2: #FFFFFF;
-  --color-3: #0B1D26;  
-  --color-4: #FFFFFF75;
+    --color-1: #FBD784;  /* 🔶 Amarillo cálido */
+    --color-2: #FFFFFF;    /* ⚪ Blanco puro */
+    --color-3: #0B1D26;     /* 🌑 Azul oscuro profundo */
+    --color-4: #FFFFFF75; /* 🌀 Blanco translúcido */
 }
 
+/* 🔠 Importación de fuentes */
 @font-face {
-    font-family: "Gilroy-ExtraBold";
+    font-family: "Gilroy-ExtraBold"; /* 🏋️ Fuente con peso extra bold */
     src: url(../assets/fonts/gilroy/Gilroy-ExtraBold.ttf);
 }
 
 @font-face {
-    font-family: "Chronicle_Display-SemiBold";
+    font-family: "Chronicle_Display-SemiBold"; /* 🎭 Fuente clásica con semi-bold */
     src: url(../assets/fonts/chronicle-display/Chronicle\ Display\ Semibold.otf);
 }
 
 @font-face {
-    font-family: "Gilroy-Bold";
+    font-family: "Gilroy-Bold"; /* 🔡 Variante más ligera de Gilroy */
     src: url(../assets/fonts/gilroy/Gilroy-Bold.ttf);
 }
