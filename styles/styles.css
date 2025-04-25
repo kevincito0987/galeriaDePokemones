@@ -108,7 +108,7 @@ main::before {
   content: "";
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 140%;
   margin-top: -490px;
   height: 700px; /* Ajusta la altura para que el degradado sea visible */
   background: linear-gradient(180deg, transparent 0%, #0B1D26 100%);
