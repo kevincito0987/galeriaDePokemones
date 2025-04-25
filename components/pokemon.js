@@ -48,3 +48,15 @@ async function fetchPokemons() {
   }
   
   fetchPokemons();
+  
+  document.getElementById("addPokemonBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    const searchBox = document.getElementById("pokemonSearch");
+    
+    // Si está oculto, lo mostramos
+    if (searchBox.style.display === "none") {
+        searchBox.style.display = "flex";
+    } else {
+        searchBox.style.display = "none"; // Si ya está visible, lo oculta
+    }
+});
