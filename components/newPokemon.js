@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 🔹 Función para buscar Pokémon por coincidencia dentro de los primeros 500 registros
 async function searchPokemons() {
     const query = document.getElementById("searchInput").value.toLowerCase();
-    const url = "https://pokeapi.co/api/v2/pokemon?limit=500"; 
+    const url = "https://pokeapi.co/api/v2/pokemon?limit=1000"; 
 
     try {
         const response = await fetch(url);
@@ -69,6 +69,8 @@ async function addSelectedPokemon() {
         };
 
         addNewCard(newPokemon);
+        console.log('Pokemon agregado', newPokemon);
+        
     } catch (error) {
         console.error("Error añadiendo Pokémon:", error);
     }
@@ -103,6 +105,8 @@ function addNewCard(pokemon) {
     // 🔹 Evento para eliminar la card al hacer clic en el botón de eliminar
     newCard.querySelector(".eliminar").addEventListener("click", function() {
         newCard.remove(); // 🔹 Elimina la card seleccionada
+        console.log("Pokemon eliminado", pokemon);
+        
     });
 
     cardContainer.prepend(newCard); // Agrega la nueva card al inicio
