@@ -1,311 +1,352 @@
+/* 📜 Importación de variables globales */
 @import url(./variables.css);
 
+/* 🛠️ Reset de estilos para mantener uniformidad */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* ✂️ Elimina el margen predeterminado */
+  padding: 0; /* ✂️ Elimina el padding predeterminado */
+  box-sizing: border-box; /* 📦 Hace que el tamaño de los elementos incluya padding y border */
 }
 
+/* 🔄 Animación de cambio de fondo dinámico */
 @keyframes changeBackground {
-  0% { background-image: url(../assets/images/pokemon.jpg); }
-  50% { background-image: url(../assets/images/pokemones.jpg); }
-  100% { background-image: url(../assets/images/pokemon.jpg); }
+  0% { background-image: url(../assets/images/pokemon.jpg); } /* 🌄 Imagen inicial */
+  50% { background-image: url(../assets/images/pokemones.jpg); } /* 🎴 Imagen intermedia */
+  100% { background-image: url(../assets/images/pokemon.jpg); } /* 🌄 Regreso a imagen original */
 }
 
+/* 🎭 Header con animación */
 header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 115vh;
-  background-size: cover; 
-  background-repeat: no-repeat;
-  animation: changeBackground 240s infinite;
-  background: linear-gradient(180deg, #0B1D26 20%, #0B1D26 80%);
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza los elementos en columna */
+  width: 100%; /* 📏 Ocupa todo el ancho */
+  height: 115vh; /* 🏔️ Altura extendida para mayor impacto visual */
+  background-size: cover; /* 🖼️ Ajusta la imagen al contenedor */
+  background-repeat: no-repeat; /* 🚫 Evita la repetición de la imagen */
+  animation: changeBackground 240s infinite; /* 🔄 Cambio de fondo automático */
+  background: linear-gradient(180deg, var(--color-3) 20%, var(--color-3) 80%); /* 🎨 Degradado de fondo */
 }
 
-
-
+/* 📌 Contenedor principal del header */
 .headerContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 950px;
-  height: 310px;
-  gap: 80px;
-  padding: 20px;
-  margin: 280px 458px 0 512px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza los elementos en columna */
+  justify-content: center; /* 🎯 Centra los elementos verticalmente */
+  width: 950px; /* 📏 Ancho fijo */
+  height: 310px; /* 📏 Altura específica */
+  gap: 80px; /* 🏷️ Espaciado entre elementos */
+  padding: 20px; /* 📦 Espaciado interno */
+  margin: 280px 458px 0 512px; /* 📏 Márgenes específicos */
 }
 
+/* 📖 Sección de guía */
 .guide {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  gap: 40px;
-  align-items: center;
-  width: 316px;
-  height: 22px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza los elementos en fila */
+  padding: 10px; /* 📦 Espaciado interno */
+  gap: 40px; /* 📏 Separación entre elementos */
+  align-items: center; /* 📍 Centra verticalmente los elementos */
+  width: 316px; /* 📏 Ancho fijo */
+  height: 22px; /* 📏 Altura específica */
 }
 
+/* 🟡 Texto dentro de la guía */
 .guide p {
-  font-family: "Gilroy-ExtraBold";
-  font-size: 18px;
-  color: #F2C94C; /* Hexadecimal de var(--color-1) */
+  font-family: "Gilroy-ExtraBold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-1); /* 🟡 Color de énfasis */
 }
 
+/* 🎚️ Barra de desplazamiento animada */
 .slider {
-  width: 72px;
-  height: 4px;
-  background-color: #F2C94C; /* Hexadecimal de var(--color-1) */
-  transition: transform 0.5s;
+  width: 72px; /* 📏 Ancho fijo */
+  height: 4px; /* 📏 Altura fija */
+  background-color: var(--color-1); /* 🟡 Color destacado */
+  transition: transform 0.5s ease; /* 🔄 Transición de animación suave */
 }
 
+/* 🏷️ Título del header */
 .headerContent h1 {
-  font-family: "Chronicle_Display-SemiBold";
-  font-size: 58px;
-  color: var(--color-2); /* Hexadecimal de var(--color-2) */
+  font-family: "Chronicle_Display-SemiBold"; /* ✍️ Fuente personalizada */
+  font-size: 58px; /* 🔠 Tamaño del texto */
+  color: var(--color-2); /* ⚪ Color del texto */
 }
 
+/* ❌ Botón de eliminación con animación */
 .eliminar {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease; /* Hace que la animación sea suave */
+  width: 40px; /* 📏 Tamaño fijo */
+  height: 40px; /* 📏 Altura fija */
+  transition: transform 0.3s ease; /* 🔄 Animación suave */
 }
 
+/* 🔍 Efecto de escala en hover */
 .eliminar:hover {
-  transform: scale(1.3); /* Aumenta el tamaño en un 30% */
+  transform: scale(1.3); /* 🔍 Aumenta el tamaño */
 }
 
-
+/* 🔽 Sección de desplazamiento */
 .scroll {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza los elementos en fila */
+  align-items: center; /* 📍 Centra verticalmente los elementos */
+  gap: 20px; /* 🎯 Espaciado entre elementos */
 }
 
+/* 🟡 Texto del scroll */
 .scroll p {
-  font-family: "Gilroy-Bold";
-  font-size: 18px;
-  color: var(--color-1)
+  font-family: "Gilroy-Bold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-1); /* 🟡 Color de énfasis */
 }
 
+/* 🎥 Icono del scroll */
 .scroll img {
-  width: 15px;
-  height: 15px;
-  transition: transform 0.5s ease-in-out;
+  width: 15px; /* 📏 Tamaño definido */
+  height: 15px; /* 📏 Mantiene proporciones cuadradas */
+  transition: transform 0.5s ease-in-out; /* 🔄 Animación de escala suave */
 }
 
+/* ✨ Efecto hover en el icono del scroll */
 .scroll img:hover {
-  transform: scale(1.3); /* Aumenta el tamaño un 30% */
+  transform: scale(1.3); /* 🔍 Aumenta el tamaño un 30% */
 }
 
+/* 🎯 Sección principal */
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0px 229px 100px 229px;
-  background: var(--color-3); /* Color de fondo */
-  position: relative; /* Necesario para que el pseudo-elemento funcione */
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza los elementos en columna */
+  justify-content: center; /* 🎯 Centra el contenido verticalmente */
+  align-items: center; /* 📍 Alinea elementos en el centro */
+  width: 100%; /* 📏 Ocupa todo el ancho */
+  padding: 0px 229px 100px 229px; /* 📦 Espaciado interno */
+  background: var(--color-3); /* 🎨 Color de fondo */
+  position: relative; /* 📌 Necesario para el pseudo-elemento */
 }
 
+/* 🌄 Pseudo-elemento para degradado */
 main::before {
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 133%;
-  margin-top: -700px;
-  height: 700px; /* Ajusta la altura para que el degradado sea visible */
-  background: linear-gradient(180deg, transparent 0%, #0B1D26 100%);
+  content: ""; /* 🌀 Elemento vacío para aplicar el fondo */
+  bottom: 0; /* 📍 Lo coloca al fondo */
+  left: 0; /* 📍 Lo posiciona en la izquierda */
+  width: 133%; /* 📏 Ancho extendido */
+  margin-top: -700px; /* 📏 Ajuste de posición */
+  height: 700px; /* 📏 Altura para degradado */
+  background: linear-gradient(180deg, transparent 0%, var(--color-3) 100%); /* 🎨 Degradado */
 }
 
+/* 🏕️ Contenedor principal */
 .mainContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  margin-top: -500px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza los elementos en columna */
+  justify-content: center; /* 🎯 Centra verticalmente */
+  align-items: center; /* 📍 Alineación centrada */
+  width: 100%; /* 📏 Ocupa todo el ancho */
+  position: relative; /* 📌 Necesario para superposiciones */
+  margin-top: -500px; /* 📏 Ajuste de posición */
 }
 
+/* 🔎 Sección de filtros */
 .filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
-  align-items: center;
-  gap: 200px;
-  padding: 90px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza los filtros en fila */
+  justify-content: center; /* 🎯 Centra los filtros horizontalmente */
+  padding: 10px; /* 📦 Espaciado interno */
+  align-items: center; /* 📍 Alineación vertical */
+  gap: 200px; /* 📏 Espaciado entre filtros */
+  padding: 90px; /* 📦 Más espacio alrededor */
 }
 
+/* 🔗 Estilos de los enlaces en filtros */
 .filters a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  padding: 10px;
-  text-decoration: none;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza los elementos en fila */
+  align-items: center; /* 📍 Alineación centrada */
+  gap: 20px; /* 📏 Espaciado entre iconos y texto */
+  padding: 10px; /* 📦 Espaciado interno */
+  text-decoration: none; /* 🚫 Elimina el subrayado */
 }
 
+/* 🖼️ Imágenes dentro de los filtros */
 .filters a img {
-  width: 40px;
-  height: 40px;
+  width: 40px; /* 📏 Tamaño fijo */
+  height: 40px; /* 📏 Mantiene proporción */
 }
+
+/* 🔍 Espaciado del área de búsqueda */
 #pokemonSearch {
-  gap: 30px;
+  gap: 30px; /* 📏 Espaciado entre elementos */
 }
 
+/* ➕ Botón para agregar Pokémon */
 #addPokemonBtn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  text-decoration: none;
-  margin-top: 10px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Alinea los elementos en fila */
+  align-items: center; /* 📍 Alineación centrada */
+  justify-content: center; /* 🎯 Centra el contenido */
+  gap: 20px; /* 📏 Espaciado */
+  padding: 10px; /* 📦 Espaciado interno */
+  text-decoration: none; /* 🚫 Sin subrayado */
+  margin-top: 10px; /* 📏 Ajuste de espacio */
 }
 
+/* 🔍 Barra de búsqueda */
 .buscar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  margin: 30px 90px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza los elementos en fila */
+  align-items: center; /* 📍 Alineación centrada */
+  gap: 20px; /* 📏 Espaciado */
+  margin: 30px 90px; /* 📏 Ajuste de posición */
 }
 
+/* 🔘 Botón de búsqueda */
 #searchBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 15px;
-  border-radius: 20px;
-  background: var(--color-1);
-  color: var(--color-3);
-  font-family: "Gilroy-Bold";
-  font-size: 14px;  
-  transition: background-color 0.5s;
+  display: flex; /* 📐 Activa flexbox */
+  align-items: center; /* 📍 Centra el contenido */
+  justify-content: center; /* 🎯 Centrado total */
+  gap: 20px; /* 📏 Espaciado entre elementos */
+  padding: 15px; /* 📦 Espaciado interno */
+  border-radius: 20px; /* 🏷️ Bordes redondeados */
+  background: var(--color-1); /* 🟡 Color de fondo */
+  color: var(--color-3); /* 🎨 Color del texto */
+  font-family: "Gilroy-Bold"; /* ✍️ Fuente personalizada */
+  font-size: 14px; /* 🔠 Tamaño del texto */
+  transition: background-color 0.5s; /* 🔄 Animación de cambio */
 }
 
+/* 📜 Lista de resultados */
 #pokemonResults {
-  width: 100%;
-  height: 50px;
-  border-radius: 20px;
-  padding: 15px;
+  width: 100%; /* 📏 Ajusta el ancho */
+  height: 50px; /* 📏 Altura específica */
+  border-radius: 20px; /* 🏷️ Bordes redondeados */
+  padding: 15px; /* 📦 Espaciado interno */
 }
 
+/* 🏕️ Campo de entrada */
 #searchInput {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  font-family: "Gilroy-ExtraBold";
-  font-size: 18px;
-  color: var(--color-3);
-  margin-bottom: 10px;
-  background: var(--color-4);
-  transition: background-color 0.5s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* 📏 Ajusta el ancho */
+  height: 40px; /* 📏 Altura fija */
+  padding: 10px; /* 📦 Espaciado interno */
+  border-radius: 20px; /* 🏷️ Bordes redondeados */
+  border: none; /* 🚫 Sin bordes */
+  outline: none; /* 🚫 Elimina el contorno */
+  font-family: "Gilroy-ExtraBold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-3); /* 🎨 Color del texto */
+  margin-bottom: 10px; /* 📏 Espaciado */
+  background: var(--color-4); /* 🎨 Color de fondo translúcido */
+  transition: background-color 0.5s; /* 🔄 Animación */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* ✨ Sombra ligera */
 }
+/* 🏷️ Texto dentro de los filtros */
 .filters a p {
-  font-family: "Gilroy-ExtraBold";
-  font-size: 18px;
-  color: var(--color-2);
+  font-family: "Gilroy-ExtraBold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-2); /* 🎨 Color aplicado */
 }
 
+/* 🎭 Efecto hover en los filtros */
 .filters a:hover {
-  background-color: var(--color-1);
-  color: var(--color-3);
-  border-radius: 20px;
+  background-color: var(--color-1); /* 🟡 Cambio de fondo */
+  color: var(--color-3); /* 🎨 Cambio de color del texto */
+  border-radius: 20px; /* 🏷️ Bordes redondeados */
 }
 
+/* 🎴 Contenedor de tarjetas */
 .card-container {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  gap: 200px;
-  width: 100%;
-  height: 100%;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza las tarjetas en columna */
+  align-items: center; /* 📍 Centra los elementos */
+  gap: 200px; /* 📏 Espaciado entre tarjetas */
+  width: 100%; /* 📏 Ocupa todo el ancho */
+  height: 100%; /* 📏 Ajuste de altura */
 }
 
+/* 🃏 Estilo de tarjeta */
 .card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  height: 520px;
-  gap: 30px;
-  padding: 10px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Alinea los elementos en fila */
+  align-items: center; /* 📍 Alineación centrada */
+  width: 100%; /* 📏 Ocupa todo el ancho disponible */
+  height: 520px; /* 📏 Altura específica */
+  gap: 30px; /* 📏 Espaciado entre elementos */
+  padding: 10px; /* 📦 Espaciado interno */
 }
 
+/* 📌 Contenido dentro de la tarjeta */
 .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-  gap: 20px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza los elementos en columna */
+  align-items: center; /* 📍 Alineación centrada */
+  width: 50%; /* 📏 Ocupa la mitad del ancho disponible */
+  height: 100%; /* 📏 Ajuste de altura */
+  gap: 20px; /* 📏 Espaciado entre elementos */
 }
 
+/* 🔢 Número dentro de la tarjeta */
 .number {
-  margin: 38px 400px 0 0;
+  margin: 38px 400px 0 0; /* 📏 Ajuste de posición */
 }
+
+/* 🔢 Estilo del número */
 .number p {
-  font-family: "Gilroy-Bold";
-  font-size: 240px;
-  color: var(--color-2);
-  opacity: 0.25; /* Aumenta la opacidad para mayor visibilidad */
-  z-index: -1;
-  mix-blend-mode: soft-light; /* Hace que el número se fusione mejor con el fondo */
+  font-family: "Gilroy-Bold"; /* ✍️ Fuente personalizada */
+  font-size: 240px; /* 🔠 Tamaño del número */
+  color: var(--color-2); /* 🎨 Color aplicado */
+  opacity: 0.25; /* ✨ Opacidad para mejor integración visual */
+  z-index: -1; /* 🔄 Lo coloca detrás de otros elementos */
+  mix-blend-mode: soft-light; /* 🔄 Mezcla para mejor fusión con el fondo */
 }
 
+/* ⚡ Sección de habilidades */
 .habilidades {
-  font-family: "Gilroy-ExtraBold";
-  font-size: 18px;
-  color: var(--color-2);
+  font-family: "Gilroy-ExtraBold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-2); /* 🎨 Color aplicado */
 }
 
-
+/* 📌 Sección descriptiva */
 .description {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  height: 60%;
-  gap: 28px;
-  margin: -210px 0 0 120px;
-  z-index: 1;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: column; /* ⬆ Organiza en columna */
+  width: 60%; /* 📏 Ancho específico */
+  height: 60%; /* 📏 Ajuste de altura */
+  gap: 28px; /* 📏 Espaciado entre elementos */
+  margin: -210px 0 0 120px; /* 📏 Ajuste de posición */
+  z-index: 1; /* 🔄 Lo coloca por encima */
 }
 
+/* 🎢 Sección interactiva */
 .get {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  display: flex; /* 📐 Activa flexbox */
+  flex-direction: row; /* ↔ Organiza en fila */
+  align-items: center; /* 📍 Alineación centrada */
+  gap: 20px; /* 📏 Espaciado */
 }
 
+/* 🟡 Texto interactivo */
 .get p {
-  font-family: "Gilroy-ExtraBold";
-  font-size: 18px;
-  color: var(--color-1); /* Hexadecimal de var(--color-1) */
-}
-.card-image {
-  width: 200%;
-  height: 100%;
-  margin-top: 20px;
-}
-.card-title {
-  font-family: "Chronicle_Display-SemiBold";
-  font-size: 64px;
-  color: var(--color-2); /* Hexadecimal de var(--color-3) */
+  font-family: "Gilroy-ExtraBold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-1); /* 🟡 Color aplicado */
 }
 
+/* 🎨 Imagen dentro de la tarjeta */
+.card-image {
+  width: 200%; /* 📏 Ajuste de ancho */
+  height: 100%; /* 📏 Mantiene proporción */
+  margin-top: 20px; /* 📏 Ajuste de posición */
+}
+
+/* 🏆 Título de la tarjeta */
+.card-title {
+  font-family: "Chronicle_Display-SemiBold"; /* ✍️ Fuente personalizada */
+  font-size: 64px; /* 🔠 Tamaño del título */
+  color: var(--color-2); /* 🎨 Color aplicado */
+}
+
+/* 📝 Texto dentro de la tarjeta */
 .card-text {
-  font-family: "Gilroy-Bold";
-  font-size: 18px;
-  color: var(--color-2); /* Hexadecimal de var(--color-3) */
+  font-family: "Gilroy-Bold"; /* ✍️ Fuente personalizada */
+  font-size: 18px; /* 🔠 Tamaño del texto */
+  color: var(--color-2); /* 🎨 Color aplicado */
 }
