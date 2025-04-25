@@ -43,7 +43,6 @@ function populateResultsDropdown(pokemonList) {
     });
 }
 
-// 🔹 Función para obtener detalles del Pokémon seleccionado y agregarlo como nueva card
 async function addSelectedPokemon() {
     const selectedUrl = document.getElementById("pokemonResults").value;
     if (!selectedUrl) return;
@@ -71,13 +70,16 @@ async function addSelectedPokemon() {
     }
 }
 
-// 🔹 Función para insertar la nueva card al inicio sin borrar las demás
+// 🔹 Función para insertar la nueva card al inicio con botón de eliminar
 function addNewCard(pokemon) {
     const cardContainer = document.querySelector(".card-container");
 
     const newCard = document.createElement("div");
     newCard.classList.add("card");
     newCard.innerHTML = `
+        <div class="card-image" style="background-image: url(${pokemon.image}); background-size: cover; background-position: center;">
+        </div>
+        <img src="./assets/icons/eliminar.svg" alt="Botón Eliminar" class="eliminar">
         <div class="card-content">
             <div class="number">
                 <p>${pokemon.number}</p>
@@ -92,7 +94,6 @@ function addNewCard(pokemon) {
                 <p class="habilidades">Abilities: ${pokemon.abilities.join(", ")}</p>
             </div>
         </div>
-        <img src="${pokemon.image}" alt="${pokemon.name}" class="card-image">
     `;
 
     cardContainer.prepend(newCard); // Agrega la nueva card al inicio

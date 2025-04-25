@@ -62,7 +62,12 @@ header {
 .headerContent h1 {
   font-family: "Chronicle_Display-SemiBold";
   font-size: 58px;
-  color: #FFFFFF; /* Hexadecimal de var(--color-2) */
+  color: var(--color-2); /* Hexadecimal de var(--color-2) */
+}
+.eliminar {
+  position: absolute;
+  height: 60px;
+  margin-top: -380px;
 }
 
 .scroll {
